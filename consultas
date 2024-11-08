@@ -1,0 +1,432 @@
+01. informacion de los actores con un limite de 20
+
+SELECT actor_id, first_name, last_name, last_update
+FROM actor
+LIMIT 20;
++----------+------------+--------------+---------------------+
+| actor_id | first_name | last_name    | last_update         |
++----------+------------+--------------+---------------------+
+|        1 | PENELOPE   | GUINESS      | 2006-02-15 04:34:33 |
+|        2 | NICK       | WAHLBERG     | 2006-02-15 04:34:33 |
+|        3 | ED         | CHASE        | 2006-02-15 04:34:33 |
+|        4 | JENNIFER   | DAVIS        | 2006-02-15 04:34:33 |
+|        5 | JOHNNY     | LOLLOBRIGIDA | 2006-02-15 04:34:33 |
+|        6 | BETTE      | NICHOLSON    | 2006-02-15 04:34:33 |
+|        7 | GRACE      | MOSTEL       | 2006-02-15 04:34:33 |
+|        8 | MATTHEW    | JOHANSSON    | 2006-02-15 04:34:33 |
+|        9 | JOE        | SWANK        | 2006-02-15 04:34:33 |
+|       10 | CHRISTIAN  | GABLE        | 2006-02-15 04:34:33 |
+|       11 | ZERO       | CAGE         | 2006-02-15 04:34:33 |
+|       12 | KARL       | BERRY        | 2006-02-15 04:34:33 |
+|       13 | UMA        | WOOD         | 2006-02-15 04:34:33 |
+|       14 | VIVIEN     | BERGEN       | 2006-02-15 04:34:33 |
+|       15 | CUBA       | OLIVIER      | 2006-02-15 04:34:33 |
+|       16 | FRED       | COSTNER      | 2006-02-15 04:34:33 |
+|       17 | HELEN      | VOIGHT       | 2006-02-15 04:34:33 |
+|       18 | DAN        | TORN         | 2006-02-15 04:34:33 |
+|       19 | BOB        | FAWCETT      | 2006-02-15 04:34:33 |
+|       20 | LUCILLE    | TRACY        | 2006-02-15 04:34:33 |
++----------+------------+--------------+---------------------+
+20 rows in set (0.00 sec)
+
+02. informacion de los acores ordenados por orden alfabetico
+
+SELECT actor_id, first_name, last_name, last_update
+FROM actor
+ORDER BY first_name ASC
+LIMIT 10;
++----------+------------+-------------+---------------------+
+| actor_id | first_name | last_name   | last_update         |
++----------+------------+-------------+---------------------+
+|      132 | ADAM       | HOPPER      | 2006-02-15 04:34:33 |
+|       71 | ADAM       | GRANT       | 2006-02-15 04:34:33 |
+|      165 | AL         | GARLAND     | 2006-02-15 04:34:33 |
+|      173 | ALAN       | DREYFUSS    | 2006-02-15 04:34:33 |
+|      125 | ALBERT     | NOLTE       | 2006-02-15 04:34:33 |
+|      146 | ALBERT     | JOHANSSON   | 2006-02-15 04:34:33 |
+|       29 | ALEC       | WAYNE       | 2006-02-15 04:34:33 |
+|      144 | ANGELA     | WITHERSPOON | 2006-02-15 04:34:33 |
+|       65 | ANGELA     | HUDSON      | 2006-02-15 04:34:33 |
+|       76 | ANGELINA   | ASTAIRE     | 2006-02-15 04:34:33 |
++----------+------------+-------------+---------------------+
+
+03. encontrar todos los actores que tengan el nombre de angela
+
+SELECT actor_id, first_name, last_name, last_update
+FROM actor
+WHERE first_name = 'ANGELA';
++----------+------------+-------------+---------------------+
+| actor_id | first_name | last_name   | last_update         |
++----------+------------+-------------+---------------------+
+|       65 | ANGELA     | HUDSON      | 2006-02-15 04:34:33 |
+|      144 | ANGELA     | WITHERSPOON | 2006-02-15 04:34:33 |
++----------+------------+-------------+---------------------+
+2 rows in set (0.00 sec)
+
+04. ciudades que su nombre empiece por B
+SELECT city_id, city, country_id, last_update
+FROM city 
+WHERE city LIKE 'B%';
++---------+-------------------------+------------+---------------------+
+| city_id | city                    | country_id | last_update         |
++---------+-------------------------+------------+---------------------+
+|      44 | Bagé                    |         15 | 2006-02-15 04:45:25 |
+|      45 | Bahía Blanca            |          6 | 2006-02-15 04:45:25 |
+|      46 | Baicheng                |         23 | 2006-02-15 04:45:25 |
+|      47 | Baiyin                  |         23 | 2006-02-15 04:45:25 |
+|      48 | Baku                    |         10 | 2006-02-15 04:45:25 |
+|      49 | Bala?iha                |         80 | 2006-02-15 04:45:25 |
+|      50 | Balikesir               |         97 | 2006-02-15 04:45:25 |
+|      51 | Balurghat               |         44 | 2006-02-15 04:45:25 |
+|      52 | Bamenda                 |         19 | 2006-02-15 04:45:25 |
+|      53 | Bandar Seri Begawan     |         16 | 2006-02-15 04:45:25 |
+|      54 | Banjul                  |         37 | 2006-02-15 04:45:25 |
+|      55 | Barcelona               |        104 | 2006-02-15 04:45:25 |
+|      56 | Basel                   |         91 | 2006-02-15 04:45:25 |
+|      57 | Bat Yam                 |         48 | 2006-02-15 04:45:25 |
+|      58 | Batman                  |         97 | 2006-02-15 04:45:25 |
+|      59 | Batna                   |          2 | 2006-02-15 04:45:25 |
+|      60 | Battambang              |         18 | 2006-02-15 04:45:25 |
+|      61 | Baybay                  |         75 | 2006-02-15 04:45:25 |
+|      62 | Bayugan                 |         75 | 2006-02-15 04:45:25 |
+|      63 | Béchar                  |          2 | 2006-02-15 04:45:25 |
+|      64 | Beira                   |         63 | 2006-02-15 04:45:25 |
+|      65 | Bellevue                |        103 | 2006-02-15 04:45:25 |
+|      66 | Belém                   |         15 | 2006-02-15 04:45:25 |
+|      67 | Benguela                |          4 | 2006-02-15 04:45:25 |
+|      68 | Beni-Mellal             |         62 | 2006-02-15 04:45:25 |
+|      69 | Benin City              |         69 | 2006-02-15 04:45:25 |
+|      70 | Bergamo                 |         49 | 2006-02-15 04:45:25 |
+|      71 | Berhampore (Baharampur) |         44 | 2006-02-15 04:45:25 |
+|      72 | Bern                    |         91 | 2006-02-15 04:45:25 |
+|      73 | Bhavnagar               |         44 | 2006-02-15 04:45:25 |
+|      74 | Bhilwara                |         44 | 2006-02-15 04:45:25 |
+|      75 | Bhimavaram              |         44 | 2006-02-15 04:45:25 |
+|      76 | Bhopal                  |         44 | 2006-02-15 04:45:25 |
+|      77 | Bhusawal                |         44 | 2006-02-15 04:45:25 |
+|      78 | Bijapur                 |         44 | 2006-02-15 04:45:25 |
+|      79 | Bilbays                 |         29 | 2006-02-15 04:45:25 |
+|      80 | Binzhou                 |         23 | 2006-02-15 04:45:25 |
+|      81 | Birgunj                 |         66 | 2006-02-15 04:45:25 |
+|      82 | Bislig                  |         75 | 2006-02-15 04:45:25 |
+|      83 | Blumenau                |         15 | 2006-02-15 04:45:25 |
+|      84 | Boa Vista               |         15 | 2006-02-15 04:45:25 |
+|      85 | Boksburg                |         85 | 2006-02-15 04:45:25 |
+|      86 | Botosani                |         78 | 2006-02-15 04:45:25 |
+|      87 | Botshabelo              |         85 | 2006-02-15 04:45:25 |
+|      88 | Bradford                |        102 | 2006-02-15 04:45:25 |
+|      89 | Brasília                |         15 | 2006-02-15 04:45:25 |
+|      90 | Bratislava              |         84 | 2006-02-15 04:45:25 |
+|      91 | Brescia                 |         49 | 2006-02-15 04:45:25 |
+|      92 | Brest                   |         34 | 2006-02-15 04:45:25 |
+|      93 | Brindisi                |         49 | 2006-02-15 04:45:25 |
+|      94 | Brockton                |        103 | 2006-02-15 04:45:25 |
+|      95 | Bucuresti               |         78 | 2006-02-15 04:45:25 |
+|      96 | Buenaventura            |         24 | 2006-02-15 04:45:25 |
+|      97 | Bydgoszcz               |         76 | 2006-02-15 04:45:25 |
++---------+-------------------------+------------+---------------------+
+54 rows in set (0.00 sec)
+
+05. peliculas con una duracion entre 80 y 120 minutos
+SELECT film_id, title, description, release_year, length
+FROM film
+WHERE length >= 80 AND length <= 120
+LIMIT 20;
++---------+----------------------+---------------------------------------------------------------------------------------------------------------------+--------------+--------+
+| film_id | title                | description                                                                                                         | release_year | length |
++---------+----------------------+---------------------------------------------------------------------------------------------------------------------+--------------+--------+
+|       1 | ACADEMY DINOSAUR     | A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies                    |         2006 |     86 |
+|       4 | AFFAIR PREJUDICE     | A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank                        |         2006 |    117 |
+|       9 | ALABAMA DEVIL        | A Thoughtful Panorama of a Database Administrator And a Mad Scientist who must Outgun a Mad Scientist in A Jet Boat |         2006 |    114 |
+|      14 | ALICE FANTASIA       | A Emotional Drama of a A Shark And a Database Administrator who must Vanquish a Pioneer in Soviet Georgia           |         2006 |     94 |
+|      17 | ALONE TRIP           | A Fast-Paced Character Study of a Composer And a Dog who must Outgun a Boat in An Abandoned Fun House               |         2006 |     82 |
+|      19 | AMADEUS HOLY         | A Emotional Display of a Pioneer And a Technical Writer who must Battle a Man in A Baloon                           |         2006 |    113 |
+|      22 | AMISTAD MIDSUMMER    | A Emotional Character Study of a Dentist And a Crocodile who must Meet a Sumo Wrestler in California                |         2006 |     85 |
+|      23 | ANACONDA CONFESSIONS | A Lacklusture Display of a Dentist And a Dentist who must Fight a Girl in Australia                                 |         2006 |     92 |
+|      26 | ANNIE IDENTITY       | A Amazing Panorama of a Pastry Chef And a Boat who must Escape a Woman in An Abandoned Amusement Park               |         2006 |     86 |
+|      28 | ANTHEM LUKE          | A Touching Panorama of a Waitress And a Woman who must Outrace a Dog in An Abandoned Amusement Park                 |         2006 |     91 |
+|      30 | ANYTHING SAVANNAH    | A Epic Story of a Pastry Chef And a Woman who must Chase a Feminist in An Abandoned Fun House                       |         2006 |     82 |
+|      31 | APACHE DIVINE        | A Awe-Inspiring Reflection of a Pastry Chef And a Teacher who must Overcome a Sumo Wrestler in A U-Boat             |         2006 |     92 |
+|      32 | APOCALYPSE FLAMINGOS | A Astounding Story of a Dog And a Squirrel who must Defeat a Woman in An Abandoned Amusement Park                   |         2006 |    119 |
+|      39 | ARMAGEDDON LOST      | A Fast-Paced Tale of a Boat And a Teacher who must Succumb a Composer in An Abandoned Mine Shaft                    |         2006 |     99 |
+|      44 | ATTACKS HATE         | A Fast-Paced Panorama of a Technical Writer And a Mad Scientist who must Find a Feminist in An Abandoned Mine Shaft |         2006 |    113 |
+|      45 | ATTRACTION NEWTON    | A Astounding Panorama of a Composer And a Frisbee who must Reach a Husband in Ancient Japan                         |         2006 |     83 |
+|      46 | AUTUMN CROW          | A Beautiful Tale of a Dentist And a Mad Cow who must Battle a Moose in The Sahara Desert                            |         2006 |    108 |
+|      48 | BACKLASH UNDEFEATED  | A Stunning Character Study of a Mad Scientist And a Mad Cow who must Kill a Car in A Monastery                      |         2006 |    118 |
+|      53 | BANG KWAI            | A Epic Drama of a Madman And a Cat who must Face a A Shark in An Abandoned Amusement Park                           |         2006 |     87 |
+|      54 | BANGER PINOCCHIO     | A Awe-Inspiring Drama of a Car And a Pastry Chef who must Chase a Crocodile in The First Manned Space Station       |         2006 |    113 |
++---------+----------------------+---------------------------------------------------------------------------------------------------------------------+--------------+--------+
+20 rows in set (0.00 sec)
+
+06. saber el numero de peliculas que hay registradas 
+
+SELECT COUNT(title) AS numero_peliculas 
+FROM film; 
++------------------+
+| numero_peliculas |
++------------------+
+|             1000 |
++------------------+
+1 row in set (0.00 sec)
+
+07. mostrar las ciudades y sus paises
+SELECT c.city, co.country
+FROM city c, country co
+WHERE c.country_id = co.country_id
+LIMIT 20;
++-----------------------+----------------+
+| city                  | country        |
++-----------------------+----------------+
+| Kabul                 | Afghanistan    |
+| Batna                 | Algeria        |
+| Béchar                | Algeria        |
+| Skikda                | Algeria        |
+| Tafuna                | American Samoa |
+| Benguela              | Angola         |
+| Namibe                | Angola         |
+| South Hill            | Anguilla       |
+| Almirante Brown       | Argentina      |
+| Avellaneda            | Argentina      |
+| Bahía Blanca          | Argentina      |
+| Córdoba               | Argentina      |
+| Escobar               | Argentina      |
+| Ezeiza                | Argentina      |
+| La Plata              | Argentina      |
+| Merlo                 | Argentina      |
+| Quilmes               | Argentina      |
+| San Miguel de Tucumán | Argentina      |
+| Santa Fé              | Argentina      |
+| Tandil                | Argentina      |
++-----------------------+----------------+
+
+08. mosttar el nombre de la pelicula y el nombre de los actores
+SELECT f.title, a.first_name, a.last_name
+FROM film f, actor a, film_actor fa
+WHERE f.film_id = fa.film_id AND a.actor_id = fa.actor_id
+ORDER BY f.title
+LIMIT 20;
++------------------+------------+-----------+
+| title            | first_name | last_name |
++------------------+------------+-----------+
+| ACADEMY DINOSAUR | PENELOPE   | GUINESS   |
+| ACADEMY DINOSAUR | CHRISTIAN  | GABLE     |
+| ACADEMY DINOSAUR | LUCILLE    | TRACY     |
+| ACADEMY DINOSAUR | SANDRA     | PECK      |
+| ACADEMY DINOSAUR | JOHNNY     | CAGE      |
+| ACADEMY DINOSAUR | MENA       | TEMPLE    |
+| ACADEMY DINOSAUR | WARREN     | NOLTE     |
+| ACADEMY DINOSAUR | OPRAH      | KILMER    |
+| ACADEMY DINOSAUR | ROCK       | DUKAKIS   |
+| ACADEMY DINOSAUR | MARY       | KEITEL    |
+| ACE GOLDFINGER   | BOB        | FAWCETT   |
+| ACE GOLDFINGER   | MINNIE     | ZELLWEGER |
+| ACE GOLDFINGER   | SEAN       | GUINESS   |
+| ACE GOLDFINGER   | CHRIS      | DEPP      |
+| ADAPTATION HOLES | NICK       | WAHLBERG  |
+| ADAPTATION HOLES | BOB        | FAWCETT   |
+| ADAPTATION HOLES | CAMERON    | STREEP    |
+| ADAPTATION HOLES | RAY        | JOHANSSON |
+| ADAPTATION HOLES | JULIANNE   | DENCH     |
+| AFFAIR PREJUDICE | JODIE      | DEGENERES |
++------------------+------------+-----------+
+20 rows in set (0.00 sec)
+
+09. mostrar el nombre de las peliculas y el de sus categorias 
+SELECT f.title AS film, c.name AS category
+FROM film f, category c, film_category ca
+WHERE f.film_id = ca.film_id AND c.category_id = ca.category_id
+ORDER BY f.title
+LIMIT 20;
++---------------------+-------------+
+| film                | category    |
++---------------------+-------------+
+| ACADEMY DINOSAUR    | Documentary |
+| ACE GOLDFINGER      | Horror      |
+| ADAPTATION HOLES    | Documentary |
+| AFFAIR PREJUDICE    | Horror      |
+| AFRICAN EGG         | Family      |
+| AGENT TRUMAN        | Foreign     |
+| AIRPLANE SIERRA     | Comedy      |
+| AIRPORT POLLOCK     | Horror      |
+| ALABAMA DEVIL       | Horror      |
+| ALADDIN CALENDAR    | Sports      |
+| ALAMO VIDEOTAPE     | Foreign     |
+| ALASKA PHANTOM      | Music       |
+| ALI FOREVER         | Horror      |
+| ALICE FANTASIA      | Classics    |
+| ALIEN CENTER        | Foreign     |
+| ALLEY EVOLUTION     | Foreign     |
+| ALONE TRIP          | Music       |
+| ALTER VICTORY       | Animation   |
+| AMADEUS HOLY        | Action      |
+| AMELIE HELLFIGHTERS | Music       |
++---------------------+-------------+
+20 rows in set (0.00 sec)
+
+10. mostrar el páis la ciudad y direccion de cada miembro del staf
+SELECT co.country, c.city, a.address, s.first_name, s.last_name
+FROM country co, city c, address a, staff s
+WHERE co.country_id = c.country_id AND a.city_id = c.city_id AND s.address_id = a.address_id
++-----------+------------+----------------------+------------+-----------+
+| country   | city       | address              | first_name | last_name |
++-----------+------------+----------------------+------------+-----------+
+| Canada    | Lethbridge | 23 Workhaven Lane    | Mike       | Hillyer   |
+| Australia | Woodridge  | 1411 Lillydale Drive | Jon        | Stephens  |
++-----------+------------+----------------------+------------+-----------+
+2 rows in set (0.02 sec)
+
+11. mostrar el pais la ciudad y direccion de cada customer
+SELECT co.country, c.city, a.address, cu.first_name, cu.last_name
+FROM country co, city c, address a, customer cu
+WHERE co.country_id = c.country_id AND a.city_id = c.city_id AND cu.address_id = a.address_id
+LIMIT 20;
++----------------+-----------------------+-------------------------------+------------+-----------+
+| country        | city                  | address                       | first_name | last_name |
++----------------+-----------------------+-------------------------------+------------+-----------+
+| Afghanistan    | Kabul                 | 1168 Najafabad Parkway        | VERA       | MCCOY     |
+| Algeria        | Batna                 | 1924 Shimonoseki Drive        | MARIO      | CHEATHAM  |
+| Algeria        | Béchar                | 1031 Daugavpils Parkway       | JUDY       | GRAY      |
+| Algeria        | Skikda                | 757 Rustenburg Avenue         | JUNE       | CARROLL   |
+| American Samoa | Tafuna                | 1892 Nabereznyje Telny Lane   | ANTHONY    | SCHWAB    |
+| Angola         | Benguela              | 486 Ondo Parkway              | CLAUDE     | HERZOG    |
+| Angola         | Namibe                | 368 Hunuco Boulevard          | MARTIN     | BALES     |
+| Anguilla       | South Hill            | 1368 Maracabo Boulevard       | BOBBY      | BOUDREAU  |
+| Argentina      | Almirante Brown       | 1623 Kingstown Drive          | WILLIE     | MARKHAM   |
+| Argentina      | Avellaneda            | 1229 Varanasi (Benares) Manor | JORDAN     | ARCHULETA |
+| Argentina      | Bahía Blanca          | 1427 A Corua (La Corua) Place | JASON      | MORRISSEY |
+| Argentina      | Córdoba               | 96 Tafuna Way                 | KIMBERLY   | LEE       |
+| Argentina      | Escobar               | 203 Tambaram Street           | MICHEAL    | FORMAN    |
+| Argentina      | Ezeiza                | 166 Jinchang Street           | DARRYL     | ASHCRAFT  |
+| Argentina      | La Plata              | 1926 El Alto Avenue           | JULIA      | FLORES    |
+| Argentina      | Merlo                 | 1532 Dzerzinsk Way            | FLORENCE   | WOODS     |
+| Argentina      | Quilmes               | 773 Dallas Manor              | PERRY      | SWAFFORD  |
+| Argentina      | San Miguel de Tucumán | 1483 Pathankot Street         | LYDIA      | BURKE     |
+| Argentina      | Santa Fé              | 430 Kumbakonam Drive          | ERIC       | ROBERT    |
+| Argentina      | Tandil                | 88 Nagaon Manor               | LEONARD    | SCHOFIELD |
++----------------+-----------------------+-------------------------------+------------+-----------+
+
+12. consultar nombre completo de cada cliente junto con la fecha en que alquiló una película.
+
+SELECT c.first_name, c.last_name, r.rental_date
+FROM customer c
+INNER JOIN rental r ON c.customer_id = r.customer_id
+LIMIT 20;
++------------+-------------+---------------------+
+| first_name | last_name   | rental_date         |
++------------+-------------+---------------------+
+| CHARLOTTE  | HUNTER      | 2005-05-24 22:53:30 |
+| TOMMY      | COLLAZO     | 2005-05-24 22:54:33 |
+| MANUEL     | MURRELL     | 2005-05-24 23:03:39 |
+| ANDREW     | PURDY       | 2005-05-24 23:04:41 |
+| DELORES    | HANSEN      | 2005-05-24 23:05:21 |
+| NELSON     | CHRISTENSON | 2005-05-24 23:08:07 |
+| CASSANDRA  | WALTERS     | 2005-05-24 23:11:53 |
+| MINNIE     | ROMERO      | 2005-05-24 23:31:46 |
+| ELLEN      | SIMPSON     | 2005-05-25 00:00:40 |
+| DANNY      | ISOM        | 2005-05-25 00:02:21 |
+| APRIL      | BURNS       | 2005-05-25 00:09:02 |
+| DEANNA     | BYRD        | 2005-05-25 00:19:27 |
+| RAYMOND    | MCWHORTER   | 2005-05-25 00:22:55 |
+| THEODORE   | CULP        | 2005-05-25 00:31:15 |
+| RONALD     | WEINER      | 2005-05-25 00:39:22 |
+| STEVEN     | CURLEY      | 2005-05-25 00:43:11 |
+| ISAAC      | OGLESBY     | 2005-05-25 01:06:36 |
+| RUTH       | MARTINEZ    | 2005-05-25 01:10:47 |
+| RONNIE     | RICKETTS    | 2005-05-25 01:17:24 |
+| ROBERTA    | HARPER      | 2005-05-25 01:48:41 |
++------------+-------------+---------------------+
+20 rows in set (0.00 sec)
+
+13. consultar el total pagado por cada cliente en sus alquileres.
+SELECT c.first_name, c.last_name, SUM(p.amount) AS total_paid
+FROM customer c
+INNER JOIN payment p ON c.customer_id = p.customer_id
+GROUP BY c.customer_id
+LIMIT 20;
++------------+-----------+------------+
+| first_name | last_name | total_paid |
++------------+-----------+------------+
+| MARY       | SMITH     |     118.68 |
+| PATRICIA   | JOHNSON   |     128.73 |
+| LINDA      | WILLIAMS  |     135.74 |
+| BARBARA    | JONES     |      81.78 |
+| ELIZABETH  | BROWN     |     144.62 |
+| JENNIFER   | DAVIS     |      93.72 |
+| MARIA      | MILLER    |     151.67 |
+| SUSAN      | WILSON    |      92.76 |
+| MARGARET   | MOORE     |      89.77 |
+| DOROTHY    | TAYLOR    |      99.75 |
+| LISA       | ANDERSON  |     106.76 |
+| NANCY      | THOMAS    |     103.72 |
+| KAREN      | JACKSON   |     131.73 |
+| BETTY      | WHITE     |     117.72 |
+| HELEN      | HARRIS    |     134.68 |
+| SANDRA     | MARTIN    |     118.72 |
+| DONNA      | THOMPSON  |      98.79 |
+| CAROL      | GARCIA    |      91.78 |
+| RUTH       | MARTINEZ  |     125.76 |
+| SHARON     | ROBINSON  |     115.70 |
++------------+-----------+------------+
+
+
+14. consultar los integrantes del staff junto con el area en la que trabajan.
+SELECT s.first_name, s.last_name, st.store_id
+FROM staff s
+INNER JOIN store st ON s.store_id = st.store_id;
++------------+-----------+----------+
+| first_name | last_name | store_id |
++------------+-----------+----------+
+| Mike       | Hillyer   |        1 |
+| Jon        | Stephens  |        2 |
++------------+-----------+----------+
+2 rows in set (0.00 sec)
+
+15. consultar el título de las películas y la tienda donde están disponibles en inventario.
+SELECT f.title, s.store_id
+FROM film f
+INNER JOIN inventory i ON f.film_id = i.film_id
+INNER JOIN store s ON i.store_id = s.store_id
+ORDER BY f.title, s.store_id
+LIMIT 20;
++------------------+----------+
+| title            | store_id |
++------------------+----------+
+| ACADEMY DINOSAUR |        1 |
+| ACADEMY DINOSAUR |        1 |
+| ACADEMY DINOSAUR |        1 |
+| ACADEMY DINOSAUR |        1 |
+| ACADEMY DINOSAUR |        2 |
+| ACADEMY DINOSAUR |        2 |
+| ACADEMY DINOSAUR |        2 |
+| ACADEMY DINOSAUR |        2 |
+| ACE GOLDFINGER   |        2 |
+| ACE GOLDFINGER   |        2 |
+| ACE GOLDFINGER   |        2 |
+| ADAPTATION HOLES |        2 |
+| ADAPTATION HOLES |        2 |
+| ADAPTATION HOLES |        2 |
+| ADAPTATION HOLES |        2 |
+| AFFAIR PREJUDICE |        1 |
+| AFFAIR PREJUDICE |        1 |
+| AFFAIR PREJUDICE |        1 |
+| AFFAIR PREJUDICE |        1 |
+| AFFAIR PREJUDICE |        2 |
++------------------+----------+
+20 rows in set (0.02 sec)
+
+16. consultar informacion de peliculas
+DELIMITER $$
+
+CREATE PROCEDURE VerPeliculasPorCategoria(IN categoria_nombre VARCHAR(100), IN cantidad INT)
+BEGIN
+    SELECT film.film_id, film.title
+    FROM sakila.film
+    JOIN sakila.film_category ON film.film_id = film_category.film_id
+    JOIN sakila.category ON film_category.category_id = category.category_id
+    WHERE category.name = categoria_nombre
+    LIMIT cantidad;
+END $$
+
+DELIMITER ;
+
+CALL VerCantidadPeliculas(20);
