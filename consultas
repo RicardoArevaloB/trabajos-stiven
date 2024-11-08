@@ -416,7 +416,6 @@ LIMIT 20;
 
 16. consultar informacion de peliculas
 DELIMITER $$
-
 CREATE PROCEDURE VerPeliculasPorCategoria(IN categoria_nombre VARCHAR(100), IN cantidad INT)
 BEGIN
     SELECT film.film_id, film.title
@@ -426,7 +425,33 @@ BEGIN
     WHERE category.name = categoria_nombre
     LIMIT cantidad;
 END $$
-
 DELIMITER ;
 
 CALL VerCantidadPeliculas(20);
++---------+---------------------+
+| film_id | title               |
++---------+---------------------+
+|       1 | ACADEMY DINOSAUR    |
+|       2 | ACE GOLDFINGER      |
+|       3 | ADAPTATION HOLES    |
+|       4 | AFFAIR PREJUDICE    |
+|       5 | AFRICAN EGG         |
+|       6 | AGENT TRUMAN        |
+|       7 | AIRPLANE SIERRA     |
+|       8 | AIRPORT POLLOCK     |
+|       9 | ALABAMA DEVIL       |
+|      10 | ALADDIN CALENDAR    |
+|      11 | ALAMO VIDEOTAPE     |
+|      12 | ALASKA PHANTOM      |
+|      13 | ALI FOREVER         |
+|      14 | ALICE FANTASIA      |
+|      15 | ALIEN CENTER        |
+|      16 | ALLEY EVOLUTION     |
+|      17 | ALONE TRIP          |
+|      18 | ALTER VICTORY       |
+|      19 | AMADEUS HOLY        |
+|      20 | AMELIE HELLFIGHTERS |
++---------+---------------------+
+20 rows in set (0.02 sec)
+
+17. procedimientos 
